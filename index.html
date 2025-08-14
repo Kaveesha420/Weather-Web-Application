@@ -11,20 +11,27 @@
 </head>
 
 <body style="background-color: #BFECFF;">
-    <nav class="navbar navbar-expand-lg bg-secondary">
+
+    <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <img src="/assest/Img/logo.png" style="width: 50px;height: 50px;border-style: dotted;border-radius: 20px;">
-            <a class="navbar-brand" href="#">SM~Weather</a>
+            <a class="navbar-brand" href="#" style="color: white;">SM~Weather</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Address,City or Zip Code"
-                        aria-label="Search" />
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                        aria-label="Search" id="txtsearch" />
+                    <button class="btn btn-outline-primary" type="submit" id="btnsearch">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-    
+
+    <video autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload noremoteplayback"
+        class="video-bg" id="bgVideo">
+        <source src="/assest/1154-143492926.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
     <section class="current-weather">
         <div class="weather-item" id="location">Colombo, Western, Sri Lanka</div>
         <div class="weather-item" id="local-time">Local Time: 2:45 PM</div>
@@ -42,11 +49,103 @@
         <div class="weather-item" id="wind-chill">Wind Chill: 27°C</div>
         <div class="weather-item" id="last-updated">Last Updated: 2:40 PM</div>
     </section>
-
+    <hr>
     <section id="DisValue">
-        <h4 id="largeTemperatureDate" style="text-align: center;">Monday/Colombo,Sri Lanka.</h4>
-        <p id="largeTemperature" style="font-size: 200px;text-align: center;">25°C</p>
+        <h4 id="largeTemperaturelocation" style="text-align: center;">Colombo,Sri Lanka.</h4>
+        <h5 id="largeTemperatureDate" style="text-align: center;">Thursday, August 13, 2025</h5>
+        
+        <div class="largeDisplay">
+            <img src="/assest/Img/Cloudy.png" alt="Icon" style="width: 60px;height: 60px;">
+            <p id="largeTemperature" style="font-size: 150px;text-align: center;margin-top: 0;">25°C</p>
+            
+        </div>
     </section>
+
+    <hr>
+
+    <h2>Hourly Forecast</h2>
+    <div class="hourly-forecast" id="hourly-forecast">
+        <div class="hour-card">
+            <p>1 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Sunny</p>
+            <p>29°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+        <div class="hour-card">
+            <p>2 PM</p>
+            <img src="https://via.placeholder.com/50" alt="Icon">
+            <p>Partly Cloudy</p>
+            <p>28°C</p>
+        </div>
+    </div>
+
+    <hr>
 
     <h2>Daily Forecast</h2>
     <div class="daily-forecast" id="daily-forecast">
@@ -66,7 +165,7 @@
         </div>
         <div class="day-card">
             <p>Wednsday</p>
-           <img src="/assest/Img/Cloudy.png" alt="Icon" style="width: 60px;">
+            <img src="/assest/Img/Cloudy.png" alt="Icon" style="width: 60px;">
             <p>Max: 31°C</p>
             <p>Min: 25°C</p>
             <p>Cloudy</p>
@@ -102,15 +201,18 @@
     </div>
 
     <footer>
-         <div class="row mt-5 ">
-            <div class="col-12 bg-secondary">
+        <div class="row mt-5 ">
+            <div class="col-12 bg-dark">
                 <hr class="mb-4">
                 <div class="text-center ">
-                    <p class="mb-0">&copy; 2025 kaveesha Sithum ce25260033. All rights reserved.</p>
+                    <p class="mb-0" style="padding-bottom: 10px; color: white;">&copy; 2025 kaveesha Sithum ce25260033.
+                        All rights
+                        reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="/assest/app.js"></script>
 </body>
 
 </html>
