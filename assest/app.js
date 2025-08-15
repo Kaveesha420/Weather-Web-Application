@@ -9,7 +9,7 @@ const format = {
 let current_date = document.getElementById("largeTemperatureDate").innerText = date.toLocaleDateString(`en-US`, format);
 
 function callApi() {
-    fetch("https://api.weatherapi.com/v1/forecast.json?key=1b4d1897ed7749d69a665615251308&q=Panadura&days=7&aqi=no&alerts=no")
+    fetch("https://api.weatherapi.com/v1/forecast.json?key=1b4d1897ed7749d69a665615251308&q=Panadura&days=8&aqi=no&alerts=no")
         .then(response => response.json())
         .then(data => setDetails(data))
 
@@ -100,7 +100,49 @@ function setDetails(LocationDetails) {
     let h12Text = document.getElementById("h12Text");
     let h12Temp = document.getElementById("h12Temp");
 
+    let day1date = document.getElementById("day1date");
+    let day1Icon = document.getElementById("day1Icon");
+    let day1MaxT = document.getElementById("day1MaxT");
+    let day1MinT = document.getElementById("day1MinT");
+    let day1Text = document.getElementById("day1Text");
 
+    let day2date = document.getElementById("day2date");
+    let day2Icon = document.getElementById("day2Icon");
+    let day2MaxT = document.getElementById("day2MaxT");
+    let day2MinT = document.getElementById("day2MinT");
+    let day2Text = document.getElementById("day2Text");
+
+    let day3date = document.getElementById("day3date");
+    let day3Icon = document.getElementById("day3Icon");
+    let day3MaxT = document.getElementById("day3MaxT");
+    let day3MinT = document.getElementById("day3MinT");
+    let day3Text = document.getElementById("day3Text");
+
+    let day4date = document.getElementById("day4date");
+    let day4Icon = document.getElementById("day4Icon");
+    let day4MaxT = document.getElementById("day4MaxT");
+    let day4MinT = document.getElementById("day4MinT");
+    let day4Text = document.getElementById("day4Text");
+
+    let day5date = document.getElementById("day5date");
+    let day5Icon = document.getElementById("day5Icon");
+    let day5MaxT = document.getElementById("day5MaxT");
+    let day5MinT = document.getElementById("day5MinT");
+    let day5Text = document.getElementById("day5Text");
+
+    let day6date = document.getElementById("day6date");
+    let day6Icon = document.getElementById("day6Icon");
+    let day6MaxT = document.getElementById("day6MaxT");
+    let day6MinT = document.getElementById("day6MinT");
+    let day6Text = document.getElementById("day6Text");
+
+    let day7date = document.getElementById("day7date");
+    let day7Icon = document.getElementById("day7Icon");
+    let day7MaxT = document.getElementById("day7MaxT");
+    let day7MinT = document.getElementById("day7MinT");
+    let day7Text = document.getElementById("day7Text");
+
+    
 
 
    Location.innerText = "Location : " + LocationDetails.location.name + " , " + LocationDetails.location.region;
@@ -188,7 +230,48 @@ function setDetails(LocationDetails) {
     h12Text.innerText = LocationDetails.forecast.forecastday[0].hour[12].condition.text
     h12Temp.innerText = LocationDetails.forecast.forecastday[0].hour[12].temp_c + "°C"
 
-    
+    day1date.innerText = LocationDetails.forecast.forecastday[1].date
+    day1Icon.src = LocationDetails.forecast.forecastday[1].day.condition.icon
+    day1MaxT.innerText = "Max : " + LocationDetails.forecast.forecastday[1].day.maxtemp_c + "°C"
+    day1MinT.innerText = "Min : " + LocationDetails.forecast.forecastday[1].day.mintemp_c + "°C"
+    day1Text.innerText = LocationDetails.forecast.forecastday[1].day.condition.text
+
+    day2date.innerText = LocationDetails.forecast.forecastday[2].date
+    day2Icon.src = LocationDetails.forecast.forecastday[2].day.condition.icon
+    day2MaxT.innerText = "Max : " + LocationDetails.forecast.forecastday[2].day.maxtemp_c + "°C"
+    day2MinT.innerText = "Min : " + LocationDetails.forecast.forecastday[2].day.mintemp_c + "°C"
+    day2Text.innerText = LocationDetails.forecast.forecastday[2].day.condition.text
+
+    day3date.innerText = LocationDetails.forecast.forecastday[3].date
+    day3Icon.src = LocationDetails.forecast.forecastday[3].day.condition.icon
+    day3MaxT.innerText = "Max : " + LocationDetails.forecast.forecastday[3].day.maxtemp_c + "°C"
+    day3MinT.innerText = "Min : " + LocationDetails.forecast.forecastday[3].day.mintemp_c + "°C"
+    day3Text.innerText = LocationDetails.forecast.forecastday[3].day.condition.text
+
+    day4date.innerText = LocationDetails.forecast.forecastday[4].date
+    day4Icon.src = LocationDetails.forecast.forecastday[4].day.condition.icon
+    day4MaxT.innerText = "Max : " + LocationDetails.forecast.forecastday[4].day.maxtemp_c + "°C"
+    day4MinT.innerText = "Min : " + LocationDetails.forecast.forecastday[4].day.mintemp_c + "°C"
+    day4Text.innerText = LocationDetails.forecast.forecastday[4].day.condition.text
+
+    day5date.innerText = LocationDetails.forecast.forecastday[5].date
+    day5Icon.src = LocationDetails.forecast.forecastday[5].day.condition.icon
+    day5MaxT.innerText = "Max : " + LocationDetails.forecast.forecastday[5].day.maxtemp_c + "°C"
+    day5MinT.innerText = "Min : " + LocationDetails.forecast.forecastday[5].day.mintemp_c + "°C"
+    day5Text.innerText = LocationDetails.forecast.forecastday[5].day.condition.text
+
+    day6date.innerText = LocationDetails.forecast.forecastday[6].date
+    day6Icon.src = LocationDetails.forecast.forecastday[6].day.condition.icon
+    day6MaxT.innerText = "Max : " + LocationDetails.forecast.forecastday[6].day.maxtemp_c + "°C"
+    day6MinT.innerText = "Min : " + LocationDetails.forecast.forecastday[6].day.mintemp_c + "°C"
+    day6Text.innerText = LocationDetails.forecast.forecastday[6].day.condition.text
+
+    day7date.innerText = LocationDetails.forecast.forecastday[7].date
+    day7Icon.src = LocationDetails.forecast.forecastday[7].day.condition.icon
+    day7MaxT.innerText = "Max : " + LocationDetails.forecast.forecastday[7].day.maxtemp_c + "°C"
+    day7MinT.innerText = "Min : " + LocationDetails.forecast.forecastday[7].day.mintemp_c + "°C"
+    day7Text.innerText = LocationDetails.forecast.forecastday[7].day.condition.text
+
 }
 
 

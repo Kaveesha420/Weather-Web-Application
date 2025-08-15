@@ -1,3 +1,7 @@
+  * {
+    margin: 0;
+    padding: 0;
+} 
   .video-bg {
     position: fixed;
     top: 0;
@@ -34,9 +38,9 @@
     text-align: center;
   }
 
-  .weather-icon {
-    width: 60px;
-  }
+  .weather-item:hover {
+    background-color: rgb(189, 187, 187);
+}
 
   .daily-forecast {
     margin-top: 20px;
