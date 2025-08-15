@@ -8,11 +8,12 @@ const format = {
 };
 let current_date = document.getElementById("largeTemperatureDate").innerText = date.toLocaleDateString(`en-US`, format);
 
-function callApi() {
-    fetch("https://api.weatherapi.com/v1/forecast.json?key=1b4d1897ed7749d69a665615251308&q=Panadura&days=8&aqi=no&alerts=no")
-        .then(response => response.json())
-        .then(data => setDetails(data))
-
+function callApi(city) {
+    fetch(
+        `https://api.weatherapi.com/v1/forecast.json?key=1b4d1897ed7749d69a665615251308&q=${city}&days=8&aqi=no&alerts=no`
+        )
+        .then((response) => response.json())
+        .then((data) => setDetails(data));
 }
 function setDetails(LocationDetails) {
     let Location = document.getElementById("location");
@@ -145,7 +146,7 @@ function setDetails(LocationDetails) {
     
 
 
-   Location.innerText = "Location : " + LocationDetails.location.name + " , " + LocationDetails.location.region;
+   Location.innerText = "Location : " + LocationDetails.location.name + " , " + LocationDetails.location.region; 
    localtime.innerText = "Local-Time : " + LocationDetails.location.localtime
    temperature.innerText = "Temperature : " + LocationDetails.current.temp_c +"°C / " + LocationDetails.current.temp_f +"°F";
    feelslike.innerText = "Feels-Like : " + LocationDetails.current.feelslike_c +"°C / " + LocationDetails.current.feelslike_f +"°F";
@@ -161,7 +162,7 @@ function setDetails(LocationDetails) {
    windchill.innerText = "Wind-Chill : " + LocationDetails.current.windchill_c + "°C / " + LocationDetails.current.windchill_f +"°F";
    lastupdated.innerText = "Last-Updated : " + LocationDetails.current.last_updated
    largeTemperature.innerText = LocationDetails.current.temp_c +"°C"
-   largeTemperaturelocation.innerText = LocationDetails.location.name + " , " + LocationDetails.location.region
+   largeTemperaturelocation.innerText = LocationDetails.location.name + " , " + LocationDetails.location.region + ", " + LocationDetails.location.country;
    large_Img.src = LocationDetails.current.condition.icon
    large_Text.innerText = LocationDetails.current.condition.text
 
@@ -275,5 +276,19 @@ function setDetails(LocationDetails) {
 }
 
 
-callApi();
+ let searchCity = document.getElementById("txtsearch");
+ let searchbtn = document.getElementById("btnsearch");
 
+ searchCity.addEventListener("keypress" , (e) => {
+        if(e.key === "Enter"){
+            let city = searchCity.value
+            callApi(city);
+        }
+ });
+
+ searchbtn.addEventListener("click", (f) => {
+    let city = searchCity.value
+    callApi(city);
+});
+
+ 
