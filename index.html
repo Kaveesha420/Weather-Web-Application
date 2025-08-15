@@ -12,18 +12,29 @@
 
 <body style="background-color: #BFECFF;">
 
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid">
-            <img src="assest/Img/logo.png" style="width: 50px;height: 50px;border-style: dotted;border-radius: 20px;">
-            <a class="navbar-brand" href="#" style="color: white;">SM~Weather</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <input class="form-control me-2" type="search" placeholder="Address,City or Zip Code"
-                        aria-label="Search" id="txtsearch" style="width: 20%;" />
-                    <button class="btn btn-outline-primary" type="submit" id="btnsearch">Search</button>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <img src="assest/Img/logo.png"
+            style="width: 50px; height: 50px; border-style: dotted; border-radius: 20px;">
+        <a class="navbar-brand" href="#" style="color: white;">SM~Weather</a>
 
+        <div class="d-flex w-100 mt-2 mt-lg-0">
+            <input class="form-control me-2 search-input" type="search"
+                placeholder="Address, City or Zip Code" aria-label="Search"
+                id="txtsearch">
+            <button class="btn btn-outline-primary" type="submit" id="btnsearch">Search</button>
+        </div>
+    </div>
+</nav>
+
+<style>
+@media (min-width: 992px) {
+    .search-input {
+        width: 20% !important;
+    }
+}
+
+</style>
     <video autoplay muted loop playsinline disablepictureinpicture controlslist="nodownload noremoteplayback"
         class="video-bg" id="bgVideo">
         <source src="assest/1154-143492926.mp4" type="video/mp4">
