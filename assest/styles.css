@@ -1,0 +1,81 @@
+  * {
+    margin: 0;
+    padding: 0;
+} 
+  .video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+
+  .current-weather {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .weather-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .weather-item:hover {
+    background-color: rgb(189, 187, 187);
+}
+
+  .daily-forecast {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .day-card {
+    background: rgba(255, 255, 255, 0.623);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .largeDisplay {
+    display: grid;
+    grid-template-columns: repeat(1 1fr);
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .hourly-forecast {
+    margin-top: 20px;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hour-card {
+    flex: 0 0 auto;
+    background: rgba(255, 255, 255, 0.623);
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 100px;
+    text-align: center;
+  }
